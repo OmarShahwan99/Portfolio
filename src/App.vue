@@ -1,0 +1,119 @@
+<template>
+  <div class="app">
+    <SideBar />
+    <main>
+      <router-view v-slot="slotProps">
+        <transition name="route" mode="out-in">
+          <component :is="slotProps.Component"></component>
+        </transition>
+      </router-view>
+    </main>
+  </div>
+</template>
+
+<script>
+import SideBar from './components/SideBar/SideBar.vue';
+
+export default {
+  components: {
+    SideBar,
+  }
+}
+</script>
+
+<style>
+:root {
+  --primary: #4ade80;
+  --primary-alt: #22c55e;
+  --gray: #64748b;
+  --dark: #1e293b;
+  --dark-alt: #334155;
+  --light: #f1f5f9;
+  --sidebar-width: 300px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--light);
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+.app {
+  display: flex;
+}
+main {
+  flex: 1 1 0;
+  padding: 2rem;
+  min-height: 100vh;
+}
+@media (max-width: 768px) {
+  main {
+    padding-left: 6rem;
+  }
+}
+/* .route-enter-from {
+  opacity: 0;
+  transform: translateY(100px);
+} */
+.route-enter-active {
+  animation: enterPageAnimation 1s ease-in-out;
+}
+/* .route-enter-to,
+.route-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+} */
+.route-leave-active {
+  animation: leavePageAnimation 1s ease-in-out;
+}
+/* .route-leave-to {
+  opacity: 0;
+  transform: translateY(-100px);
+} */
+
+@keyframes enterPageAnimation {
+  0% {
+    transform: scale(0.9) translateX(100%);
+  }
+  80% {
+    transform: scale(0.9) translateX(0);
+  }
+  100% {
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes leavePageAnimation {
+  0% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.9) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9) translateX(-100%);
+    opacity: 0;
+  }
+}
+</style>
