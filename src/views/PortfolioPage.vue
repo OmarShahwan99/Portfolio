@@ -37,12 +37,12 @@ export default {
     height: 100%;
 }
 .container {
+    height: calc(100% - 60px);
     width: 100%;
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
-    padding-top: 60px;
 }
 @media (max-width: 991px) {
     .container {

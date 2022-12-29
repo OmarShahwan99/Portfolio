@@ -28,8 +28,8 @@ export default {
     display: flex;
     gap: 20px;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 60px;
+    justify-content: center;
+    height: calc(100% - 60px);
 }
 @media(max-width: 991px) {
     .container {
