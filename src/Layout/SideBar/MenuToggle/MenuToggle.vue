@@ -21,6 +21,11 @@ export default {
     font-size: 2rem;
     transition: 0.2s ease-out;
 }
+@media (max-width: 450px) {
+    .material-symbols-outlined {
+        font-size: 1.5rem;
+    }
+}
 .material-symbols-outlined.closed:hover {
     color: var(--primary);
     transform: translateX(0.5rem)

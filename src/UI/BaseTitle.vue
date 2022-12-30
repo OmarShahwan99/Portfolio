@@ -9,5 +9,6 @@ h1 {
     font-size: 38px;
     color: var(--dark);
     letter-spacing: -1px;
+    margin-bottom: 15px;
 }
 </style>

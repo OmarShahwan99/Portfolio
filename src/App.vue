@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SideBar from './components/SideBar/SideBar.vue';
+import SideBar from './Layout/SideBar/SideBar.vue';
 
 export default {
   components: {
@@ -68,6 +68,11 @@ main {
 @media (max-width: 768px) {
   main {
     padding-left: 6rem;
+  }
+}
+@media (max-width: 450px) {
+  main {
+    padding-left: 4rem;
   }
 }
 /* .route-enter-from {

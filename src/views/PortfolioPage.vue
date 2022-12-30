@@ -65,6 +65,11 @@ export default {
         width: 250px;
     }
 }
+@media (max-width: 450px) {
+    .projects {
+        width: 200px;
+    }
+}
 .title {
     margin-bottom: 20px;
 }

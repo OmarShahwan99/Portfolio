@@ -67,16 +67,34 @@ aside {
         z-index: 99
     }
 }
+@media (max-width: 450px) {
+    aside {
+        width: calc(2rem + 8px);
+    }
+}
 .header {
     margin-bottom: 1rem;
+    
 }
 .is-open {
     width: var(--sidebar-width);
 }
+@media (max-width: 450px) {
+    .is-open {
+        width: calc(var(--sidebar-width) - 3rem);
+    }
+    .header {
+        margin-left: -0.5rem;
+    }
+}
 .logo h1 {
     color: var(--primary);
     font-size: 24px
-
+}
+@media (max-width: 450px) {
+    .logo h1 {
+        font-size: 18px;
+    }
 }
 h1 span {
     opacity: 0;

@@ -1,13 +1,13 @@
 <template>
-    <router-link to="/settings" class="button">
-        <span class="material-symbols-outlined">Settings</span>
-        <span class="text" :class="`${open ? 'showed' : ''}`">Settings</span>
+    <router-link :to="link" class="button" >
+        <span class="material-symbols-outlined">{{ icon }}</span>
+        <span class="text" :class="`${open ? 'showed' : ''}`">{{ title }}</span>
     </router-link>
 </template>
 
 <script>
 export default {
-    props: ['open']
+    props: ['title', 'icon', 'link', 'open'],
 }
 </script>
 
@@ -19,10 +19,12 @@ export default {
     color: var(--light);
     padding: 0.7rem 1rem;
     transition: 0.2s ;
-    position: absolute;
-    margin: 0 -1rem;
-    bottom: 0;
-    width: 100%;
+    position: relative;
+}
+@media (max-width: 450px) {
+    .button {
+        padding: 0.7rem 0.5rem;
+    }
 }
 .button::before {
     content: '';
@@ -45,6 +47,11 @@ export default {
 }
 .material-symbols-outlined {
     font-size: 2rem;
+}
+@media (max-width: 450px) {
+    .material-symbols-outlined {
+        font-size: 1.5rem;
+    }
 }
 .text {
     opacity: 0;
