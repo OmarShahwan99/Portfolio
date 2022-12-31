@@ -7,10 +7,6 @@
     </div>
 </template>
 
-<script>
-
-</script>
-
 <style scoped>
 .about-me {
     flex-basis: 50%;

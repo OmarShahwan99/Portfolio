@@ -31,14 +31,8 @@
 // import { animate } from 'motion';
 import { animate } from 'motion';
 
-
 export default {
     props: ['skills'],
-    data() {
-        return {
-            counter: 0,
-        }
-    },
     mounted() {
         this.$refs.progress.forEach(el => {
             animate(el, {width: el.dataset.prog + '%',}, {
