@@ -1,13 +1,13 @@
 <template>
     <router-link to="/settings" class="button">
         <span class="material-symbols-outlined">Settings</span>
-        <span class="text" :class="`${open ? 'showed' : ''}`">Settings</span>
+        <span class="text" :class="`${isOpen ? 'showed' : ''}`">Settings</span>
     </router-link>
 </template>
 
 <script>
 export default {
-    props: ['open']
+    props: ['isOpen']
 }
 </script>
 

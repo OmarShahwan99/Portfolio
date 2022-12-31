@@ -2,7 +2,9 @@
     <aside :class="openSidebar">
         <div class="header">
             <my-logo :isOpen="sidebarIsOpen"></my-logo>
-            <MenuToggle :isOpen="sidebarIsOpen"/>
+            <MenuToggle 
+                @open-sidebar="toggleSidebar"
+                :isOpen="sidebarIsOpen"/>
         </div>
         <div class="menu-toggle-wrap">
             <MenuList :isOpen="sidebarIsOpen"/>
@@ -16,8 +18,18 @@ import MenuList from './Menu/MenuLits.vue';
 import MyLogo from './MyLogo.vue';
 
 export default {
-    props: ['items', 'sidebarIsOpen'],
-    inject: ['toggleSidebar'],
+    props: ['items'],
+    data() {
+        return { 
+            sidebarIsOpen: false,
+        }
+    },
+    methods: {
+        toggleSidebar() {
+            this.sidebarIsOpen = !this.sidebarIsOpen;
+            return this.sidebarIsOpen;
+        },
+    },
     components: {
         MenuToggle,
         MenuList,
@@ -44,11 +56,11 @@ aside {
     position: relative;
     z-index: 500;
 }
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     aside {
         display: none;
     }
-}
+} */
 .header {
     margin-bottom: 1rem;
     

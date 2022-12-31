@@ -1,7 +1,8 @@
 <template>
   <div class="app">
-    <SideBar :sidebarIsOpen="sidebarIsOpen"/>
-    <MobileNavigations />
+    <!-- <SideBar :sidebarIsOpen="sidebarIsOpen"/>
+    <MobileNavigations /> -->
+    <component :is="activeComponent"></component>
     <main>
       <router-view v-slot="slotProps">
         <transition name="route" mode="out-in">
@@ -23,25 +24,31 @@ export default {
   },
   data(){
         return {
-            sidebarIsOpen: false,
-            itemsList: [
+            sidebarItems: [
                 { link: '/', icon: 'fa-house', title: 'Home' },
-                { link: '/about', icon: 'fa-address-card', title: 'About' },
+                { link: '/about', icon: 'fa-circle-info', title: 'About' },
                 { link: '/portfolio', icon: 'fa-briefcase', title: 'Portfolio' },
                 { link: '/contact', icon: 'fa-envelope', title: 'Contact' },
             ],
+            activeComponent: 'side-bar'
         }
     },
+    mounted() {
+      this.getWindowWidth()
+      window.addEventListener('resize', this.getWindowWidth);
+    },
     methods: {
-        toggleSidebar() {
-            this.sidebarIsOpen = !this.sidebarIsOpen;
-            return this.sidebarIsOpen;
-        },
+        getWindowWidth() {
+          if (window.innerWidth <= 768 ) {
+            this.activeComponent = 'mobile-navigations'
+          }else {
+            this.activeComponent = 'side-bar'
+          }
+        }
     },
     provide() {
         return {
-            items: this.itemsList,
-            toggleSidebar: this.toggleSidebar,
+            items: this.sidebarItems,
         }
     }
 }

@@ -59,14 +59,10 @@ export default {
         width: 350px;
     }
 }
-@media (max-width: 525px) {
-    .projects {
-        width: 250px;
-    }
-}
+
 @media (max-width: 450px) {
     .projects {
-        width: 200px;
+        width: 335px;
     }
 }
 .title {

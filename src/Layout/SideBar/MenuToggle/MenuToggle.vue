@@ -1,5 +1,5 @@
 <template>
-    <button class="menu-toggle" @click="toggleSidebar">
+    <button class="menu-toggle" @click="$emit('openSidebar')">
         <span 
             class="material-symbols-outlined"
             :class="arrowPosition"
