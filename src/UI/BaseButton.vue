@@ -4,12 +4,6 @@
     </button>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scope>
 .base-button {
     padding: 10px 25px;

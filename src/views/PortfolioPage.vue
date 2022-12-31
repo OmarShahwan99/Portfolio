@@ -1,6 +1,5 @@
 <template>
     <div class="portfolio">
-        <base-title>Features & Projects</base-title>
         <div class="container">
             <div class="features">
                 <features-boxes></features-boxes>

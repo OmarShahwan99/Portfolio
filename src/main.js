@@ -11,11 +11,26 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import {faEye, faLaptopCode, faCode, faCheckCircle, faCircleExclamation } from '@fortawesome/free-solid-svg-icons'
+import {faEye, faLaptopCode, faCode, faCheckCircle, faCircleExclamation, faHouse, faAddressCard, faBriefcase, faEnvelope, faInfo } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faGithub, faLinkedinIn, faTelegram } from '@fortawesome/free-brands-svg-icons';
 
 /* add icons to the library */
-library.add(faEye, faFacebookF, faGithub, faTelegram, faLinkedinIn, faLaptopCode, faCode, faCheckCircle, faCircleExclamation);
+library.add(
+    faEye,
+    faFacebookF,
+    faGithub,
+    faTelegram,
+    faLinkedinIn,
+    faLaptopCode,
+    faCode,
+    faCheckCircle,
+    faCircleExclamation,
+    faHouse,
+    faAddressCard,
+    faBriefcase,
+    faEnvelope,
+    faInfo
+);
 
 const app = createApp(App)
 

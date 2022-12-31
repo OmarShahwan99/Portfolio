@@ -1,16 +1,18 @@
 <template>
-    <h3 v-if="open">Menu</h3>
-    <div class="menu">
-        <menu-item
-            v-for="item in items"
-            :key="item.title"
-            :link="item.link"
-            :title="item.title"
-            :icon="item.icon"
-            :open="open"
-        ></menu-item>
+    <div>
+        <h3 v-if="isOpen">Menu</h3>
+        <div class="menu">
+            <menu-item
+                v-for="item in items"
+                :key="item.title"
+                :link="item.link"
+                :title="item.title"
+                :icon="item.icon"
+                :isOpen="isOpen"
+            ></menu-item>
+        </div>
+        <setting-item :isOpen="isOpen"></setting-item>
     </div>
-    <setting-item :open="open"></setting-item>
 </template>
 
 <script>
@@ -18,7 +20,8 @@ import MenuItem from './MenuItem.vue';
 import SettingItem from './SettingItem.vue';
 
 export default {
-    props: ['items', 'open'],
+    props: ['isOpen'],
+    inject: ['items'],
     components: {
         MenuItem,
         SettingItem,

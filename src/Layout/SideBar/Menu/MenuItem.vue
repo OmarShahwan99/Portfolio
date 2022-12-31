@@ -1,13 +1,20 @@
 <template>
-    <router-link :to="link" class="button" >
-        <span class="material-symbols-outlined">{{ icon }}</span>
-        <span class="text" :class="`${open ? 'showed' : ''}`">{{ title }}</span>
+    <router-link :to="link" class="button">
+        <span>
+            <font-awesome-icon :icon="['fas', icon]" class="icon"/>
+        </span>
+        <span class="text" :class="showTitle">{{ title }}</span>
     </router-link>
 </template>
 
 <script>
 export default {
-    props: ['title', 'icon', 'link', 'open'],
+    props: ['title', 'icon', 'link', 'isOpen'],
+    computed: {
+        showTitle() {
+            return { 'showed': this.isOpen }
+        }
+    }
 }
 </script>
 
@@ -45,11 +52,11 @@ export default {
     color: var(--primary);
     background-color: var(--dark-alt);
 }
-.material-symbols-outlined {
+.icon {
     font-size: 2rem;
 }
 @media (max-width: 450px) {
-    .material-symbols-outlined {
+    .icon {
         font-size: 1.5rem;
     }
 }

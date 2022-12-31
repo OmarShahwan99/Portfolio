@@ -1,6 +1,5 @@
 <template>
     <div class="about">
-        <base-title>About & Skills</base-title>
         <div class="container">
             <about-me></about-me>
             <my-skills></my-skills>

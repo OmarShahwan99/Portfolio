@@ -1,6 +1,7 @@
 <template>
   <div class="app">
-    <SideBar />
+    <SideBar :sidebarIsOpen="sidebarIsOpen"/>
+    <MobileNavigations />
     <main>
       <router-view v-slot="slotProps">
         <transition name="route" mode="out-in">
@@ -13,11 +14,36 @@
 
 <script>
 import SideBar from './Layout/SideBar/SideBar.vue';
+import MobileNavigations from './Layout/MobileNavigations/MobileNavigations.vue'
 
 export default {
   components: {
     SideBar,
-  }
+    MobileNavigations
+  },
+  data(){
+        return {
+            sidebarIsOpen: false,
+            itemsList: [
+                { link: '/', icon: 'fa-house', title: 'Home' },
+                { link: '/about', icon: 'fa-address-card', title: 'About' },
+                { link: '/portfolio', icon: 'fa-briefcase', title: 'Portfolio' },
+                { link: '/contact', icon: 'fa-envelope', title: 'Contact' },
+            ],
+        }
+    },
+    methods: {
+        toggleSidebar() {
+            this.sidebarIsOpen = !this.sidebarIsOpen;
+            return this.sidebarIsOpen;
+        },
+    },
+    provide() {
+        return {
+            items: this.itemsList,
+            toggleSidebar: this.toggleSidebar,
+        }
+    }
 }
 </script>
 
@@ -65,14 +91,9 @@ main {
   padding: 2rem;
   min-height: 100vh;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   main {
-    padding-left: 6rem;
-  }
-}
-@media (max-width: 450px) {
-  main {
-    padding-left: 4rem;
+    padding: 2rem 0;
   }
 }
 /* .route-enter-from {

@@ -1,8 +1,8 @@
 <template>
-    <button class="menu-toggle" @click="toggleMenu">
+    <button class="menu-toggle" @click="toggleSidebar">
         <span 
             class="material-symbols-outlined"
-            :class="`${isOpen ? 'opened' : 'closed'}`"
+            :class="arrowPosition"
             >keyboard_double_arrow_right
         </span>
     </button>
@@ -11,7 +11,15 @@
 <script>
 export default {
     props: ['isOpen'],
-    inject: ['toggleMenu'],
+    inject: ['toggleSidebar'],
+    computed: {
+        arrowPosition() {
+            return {
+                'opened': this.isOpen,
+                'closed': !this.isOpen
+            }
+        }
+    }
 }
 </script>
 
