@@ -1,7 +1,7 @@
 <template>
     <div class="text">
         <span>Welcome!</span>
-        <h1>I Am a 
+        <h1>I Am 
             <span class="typed-text">{{ typeValue }}</span>
             <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
         </h1>
@@ -28,10 +28,12 @@ export default {
     data() {
         return {
             typeValue: '',
-            typeStatus: false,
-            text: 'Frontend Developer.',
+            typeStatus: null,
+            typingArray: ['Omar Shahwan.', 'Frontend Developer.'],
+            arrayIndex: 0,
             typingSpeed: 200,
             charIndex: 0,
+            typingCounter: 0,
             socialIcons: [
                 { icon: 'fa-facebook-f', link: 'www.facebook.com/Omar.Shahwan.X'},
                 { icon: 'fa-github', link: 'github.com/OmarShahwan99?tab=repositories' },
@@ -42,17 +44,39 @@ export default {
     },
     methods: {
         typeText() {
+            this.typeStatus = false;
+            this.typingCounter++;
             const interval = setInterval(() => {
-                this.typeValue += this.text.charAt(this.charIndex);
+                this.typeValue += this.typingArray[this.arrayIndex].charAt(this.charIndex);
                 this.charIndex++;
-                if (this.charIndex > this.text.length) {
+                if (this.charIndex > this.typingArray[this.arrayIndex].length) {
                     clearInterval(interval);
                     this.typeStatus = true;
+                    this.arrayIndex++;
+                    if (this.arrayIndex > 1) {
+                        this.arrayIndex = 0;
+                    }
+                    if (this.typingCounter < 3) {
+                        this.eraseText();
+                    }
                 }
             }, this.typingSpeed)
+        },
+        eraseText() {
+            const interval = setInterval(() => {
+                this.typeStatus = false;
+                this.typeValue = this.typeValue.substr(0, this.charIndex-1);
+                this.charIndex--;
+                if (this.charIndex <= 0) {
+                    clearInterval(interval);
+                    this.typeStatus = true;
+                    this.charIndex = 0;
+                    this.typeText();
+                }
+            }, this.typingSpeed) 
         }
     },
-    created(){
+    mounted(){
         this.typeText();
     }
 }

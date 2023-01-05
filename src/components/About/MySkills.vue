@@ -1,6 +1,9 @@
 <template>
     <div class="skills">
-        <skill-item :skills="skills"></skill-item>
+        <h1>My Skills</h1>
+        <div class="skills-content">
+            <skill-item :skills="skills"></skill-item>
+        </div>
     </div>
 </template>
 
@@ -13,29 +16,30 @@ export default {
     },
     data() {
         return {
-            skills: {
-                one: [
+            skills: [
                     { lang: 'HTML', precent: 90 },
                     { lang: 'CSS', precent: 80 },
-                    { lang: 'JavaScript', precent: 75 }],
-                two: [
+                    { lang: 'JavaScript', precent: 75 },
                     { lang: 'tailwindcss', precent: 85 },
                     { lang: 'Vujs', precent: 80 },
                     { lang: 'React', precent: 50 }
-                ]
-            } 
+                ],
+            
         }
-    },
+    }
 }
 </script>
 
 <style scoped>
 .skills {
     flex-basis: 50%;
-    background-color: #fff;
     padding: 20px;
+}
+h1 {
+    margin-bottom: 20px;
+}
+.skills-content {
     border-radius: 12px;
-    box-shadow: 1px 3px 8px #ccc;
     display: flex;
     flex-direction: column;
 }

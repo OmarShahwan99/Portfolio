@@ -101,7 +101,6 @@ export default {
   methods: {
     viewProject(index) {
       this.projectImgs = this.projects[index].imgs;
-      console.log(this.projectImgs);
       this.projectIsViewed = true;
       this.projectInfo = {
         ...this.projects[index]
@@ -187,7 +186,6 @@ ul li {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -209,6 +207,7 @@ ul li {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .project-modal {
@@ -224,9 +223,6 @@ ul li {
   .project-modal {
     flex-direction: column-reverse;
     justify-content: flex-end;
-  }
-  .image-slider {
-    flex-basis: 100%;
   }
 }
 </style>

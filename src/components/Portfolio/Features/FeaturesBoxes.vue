@@ -17,7 +17,7 @@ export default {
             features: [
                 { id: 'one', title: 'Web Developer', icon: 'fa-laptop-code' },
                 { id: 'two', title: 'User Testing', icon: 'fa-check-circle' },
-                { id: 'three', title: 'Proplem Solving', icon: 'fa-circle-exclamation' },
+                { id: 'three', title: 'Problem Solving', icon: 'fa-circle-exclamation' },
                 { id: 'four', title: 'Clean Code', icon: 'fa-code' }
             ]
         }

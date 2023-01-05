@@ -14,10 +14,8 @@
 </template>
 
 <script>
-
 export default {
     inject: ['items'],
-
 }
 </script>
 
@@ -29,11 +27,6 @@ div {
     justify-content: center;
     align-items: center;
 }
-/* @media (min-width: 768px) {
-    div {
-        display: none;
-    }
-} */
 ul {
     list-style: none;
     display: flex;

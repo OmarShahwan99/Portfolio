@@ -39,6 +39,7 @@ export default {
     height: calc(100% - 60px);
     width: 100%;
     display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
@@ -52,7 +53,7 @@ export default {
     width: 100%;
 }
 .projects {
-    width: 470px;
+    width: 500px;
 }
 @media (max-width: 645px) {
     .projects {

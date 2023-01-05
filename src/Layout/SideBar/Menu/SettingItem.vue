@@ -1,6 +1,8 @@
 <template>
     <router-link to="/settings" class="button">
-        <span class="material-symbols-outlined">Settings</span>
+        <span class="material-symbols-outlined">
+            <font-awesome-icon icon="fa-gear"/>
+        </span>
         <span class="text" :class="`${isOpen ? 'showed' : ''}`">Settings</span>
     </router-link>
 </template>

@@ -1,8 +1,7 @@
 <template>
     <div class="feature-item"
         v-for="feature in features"
-        :key="feature.id"
-    >
+        :key="feature.id">
         <font-awesome-icon :icon="['fas', feature.icon]" class="icon"/>
         <h4>{{ feature.title }}</h4>
     </div> 
@@ -11,9 +10,6 @@
 <script>
 export default {
     props: ['features'],
-    computed() {
-
-    }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="skill-item">
-        <div class="skill" v-for="skill in skills.one" :key="skill.lang">
+        <div class="skill" v-for="skill in skills" :key="skill.lang">
             <span class="title">{{ skill.lang }}</span>
             <span class="precent">{{ skill.precent }}%</span>
             <span class="skill-progress">
@@ -8,19 +8,6 @@
                     ref="progress"
                     :data-prog="skill.precent"
                     class="progress">
-                </span>
-            </span>
-        </div>
-    </div>
-    <div class="skill-item">
-        <div class="skill" v-for="skill in skills.two" :key="skill.lang">
-            <span class="title">{{ skill.lang }}</span>
-            <span class="precent">{{ skill.precent }}%</span>
-            <span class="skill-progress">
-                <span
-                    ref="progress"
-                    :data-prog="skill.precent"
-                    class="progress" >
                 </span>
             </span>
         </div>

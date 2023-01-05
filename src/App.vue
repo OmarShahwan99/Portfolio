@@ -98,11 +98,6 @@ main {
   padding: 2rem;
   min-height: 100vh;
 }
-@media (max-width: 767px) {
-  main {
-    padding: 2rem 0;
-  }
-}
 /* .route-enter-from {
   opacity: 0;
   transform: translateY(100px);
