@@ -34,6 +34,7 @@ export default {
     .container {
         flex-direction: column;
         justify-content: center;
+        padding-top: 30px;
     }
 }
 </style>

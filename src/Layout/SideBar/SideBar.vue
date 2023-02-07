@@ -46,7 +46,7 @@ export default {
 
 <style scoped>
 aside {
-    background-color: var(--dark);
+    background-color: var(--dark-alt);
     color: var(--light);
     overflow: hidden;
     width: calc(2rem + 32px);
@@ -56,14 +56,13 @@ aside {
     position: relative;
     z-index: 500;
 }
-/* @media (max-width: 767px) {
+@media (max-width: 991px) {
     aside {
-        display: none;
+        position: fixed;
     }
-} */
+}
 .header {
     margin-bottom: 1rem;
-    
 }
 .is-open {
     width: var(--sidebar-width);
@@ -72,5 +71,4 @@ aside {
     display: flex;
     flex-direction: column;
 }
-
 </style>

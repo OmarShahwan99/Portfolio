@@ -3,9 +3,9 @@
         <h1>About Me</h1>
         <p>I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps, custom plugins, features, animations, and coding interactive layouts.</p>
         <ul>
-            Skills:
+            <span>Skills:</span>
             <li v-for="icon in icons" :key="icon">
-                <font-awesome-icon :icon="['fab', icon]" class="icon"/>
+                <img :src="require(`../../assets/icons/${icon}`)" class="icon"/>   
             </li>
         </ul>
         <base-button>Download CV</base-button>
@@ -16,7 +16,7 @@
 export default {
     data() {
         return {
-            icons: ['fa-html5', 'fa-css3', 'fa-bootstrap', 'fa-vuejs', 'fa-react'],
+            icons: ['html.png', 'css3.png', 'js-1.png', 'tailwind.png', 'vue.png', 'react.png']
         }
     }
 }
@@ -40,18 +40,25 @@ h2 {
     font-size: 38px;
 }
 p {
-    color: #777;
+    color: var(--p-color);
     line-height: 1.7;
     margin: 20px 0;
 }
 ul {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 15px;
     list-style: none;
     margin-bottom: 20px;
 }
+span {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: var(--primary-alt);
+    font-weight: 700;
+}
 .icon {
-    color: var(--dark-alt);
-    font-size: 22px;
+    width: 40px;
 }
 </style>

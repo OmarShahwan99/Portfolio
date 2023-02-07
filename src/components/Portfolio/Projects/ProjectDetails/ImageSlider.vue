@@ -3,7 +3,7 @@
         <transition>
             <img
                 v-if="index === counter"
-                :src="require(`../../../assets/${img}`)"
+                :src="require(`../../../../assets/${img}`)"
             />
         </transition>
     </div>
@@ -36,6 +36,8 @@ export default {
 <style scoped>
 div {
     position: relative;
+    object-fit: cover;
+    width: 100%;
 }
 img {
     position: absolute;
@@ -44,8 +46,8 @@ img {
     left: 0;
     right: 0;
     width: 100%;
+    
 }
-
 .v-enter-from {
     transform: translateX(100%);
 }

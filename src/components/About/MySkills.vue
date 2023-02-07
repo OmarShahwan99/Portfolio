@@ -37,6 +37,7 @@ export default {
 }
 h1 {
     margin-bottom: 20px;
+    color: var(--light);
 }
 .skills-content {
     border-radius: 12px;

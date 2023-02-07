@@ -14,14 +14,15 @@ export default {
 
 <style scoped>
 .icon {
-    border: 1px solid var(--dark-alt);
+    border: 1px solid var(--light);
     padding: 7px;
     border-radius: 50%;
-    color: var(--dark-alt);
+    color: var(--light);
     transition: 0.2s;
 }
 .icon:hover {
-    background-color: var(--dark-alt);
+    background-color: var(--primary-alt);
+    border-color: var(--primary-alt);
     color: var(--light);
 }
 

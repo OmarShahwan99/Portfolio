@@ -23,13 +23,13 @@ export default {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     z-index: 999;
 }
 .modal {
     background-color: var(--dark-alt);
-    width: 90%;
+    width: fit-content;
     border-radius: 12px;
     top: 50%;
     left: 50%;
@@ -40,7 +40,7 @@ export default {
 }
 /* @media (max-width: 767px) {
     .modal {
-        height: 90%;
+        width: 60%;
     }
 } */
 .modal span {
@@ -51,30 +51,20 @@ export default {
     color: #fff;
     border-radius: 50%;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 600;
 }
-/* .modal-enter-from,
-.modal-leave-to {
-    top: -100%;
-    opacity: 0;
-} */
 .modal-enter-active {
     animation: enterModal 0.4s ease-out;
 }
 .modal-leave-active {
     animation: leaveModal 0.4s ease-in;
 }
-/* .modal-enter-to,
-.modal-leave-from {
-    top: 50%;
-    opacity: 1;
-} */
 
 @keyframes enterModal {
     0% {

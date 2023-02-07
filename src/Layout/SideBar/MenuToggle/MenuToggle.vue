@@ -11,7 +11,6 @@
 <script>
 export default {
     props: ['isOpen'],
-    inject: ['toggleSidebar'],
     computed: {
         arrowPosition() {
             return {

@@ -11,20 +11,17 @@
                 :isOpen="isOpen"
             ></menu-item>
         </div>
-        <setting-item :isOpen="isOpen"></setting-item>
     </div>
 </template>
 
 <script>
 import MenuItem from './MenuItem.vue';
-import SettingItem from './SettingItem.vue';
 
 export default {
     props: ['isOpen'],
     inject: ['items'],
     components: {
         MenuItem,
-        SettingItem,
     }
 }
 </script>

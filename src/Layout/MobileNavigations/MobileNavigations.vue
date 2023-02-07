@@ -22,7 +22,7 @@ export default {
 <style scoped>
 div {
     width: 100%;
-    background-color: var(--dark);
+    background-color: var(--dark-alt);
     display: flex;
     justify-content: center;
     align-items: center;

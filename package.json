@@ -18,7 +18,8 @@
     "motion": "^10.15.3",
     "swiper": "^8.4.5",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vueperslides": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

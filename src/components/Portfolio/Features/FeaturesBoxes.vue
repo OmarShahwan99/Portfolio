@@ -29,7 +29,7 @@ export default {
 h1 {
     margin-bottom: 20px;
     font-size: 38px;
-    color: var(--dark-alt);
+    color: var(--light);
 }
 @media (max-width: 767px) {
     h1 {

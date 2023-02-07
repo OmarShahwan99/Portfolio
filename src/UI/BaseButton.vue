@@ -7,10 +7,10 @@
 <style scope>
 .base-button {
     padding: 10px 25px;
-    color: var(--dark);
+    color: var(--light);
     font-size: 1rem;
     font-weight: bold;
-    border: 1px solid var(--dark);
+    border: 1px solid var(--primary-alt);
     transition: 0.2s ease-out;
     position: relative;
 }

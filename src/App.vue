@@ -56,12 +56,14 @@ export default {
 
 <style>
 :root {
+  --background: linear-gradient(to right, #1e293b, #334155, #2c5364);
   --primary: #4ade80;
   --primary-alt: #22c55e;
   --gray: #64748b;
   --dark: #1e293b;
   --dark-alt: #334155;
   --light: #f1f5f9;
+  --p-color: #a5a7a8;
   --sidebar-width: 300px;
 }
 * {
@@ -71,15 +73,16 @@ export default {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--light);
+  background-image: var(--background);
+  overflow: hidden;
 }
 .container {
     padding-left: 15px;
     padding-right: 15px;
+    max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
 }
-
 button {
   cursor: pointer;
   appearance: none;
@@ -98,26 +101,17 @@ main {
   padding: 2rem;
   min-height: 100vh;
 }
-/* .route-enter-from {
-  opacity: 0;
-  transform: translateY(100px);
-} */
+@media (min-width: 767px) and (max-width: 991px) {
+  main {
+    margin-left: 50px;
+  }
+}
 .route-enter-active {
   animation: enterPageAnimation 1s ease-in-out;
 }
-/* .route-enter-to,
-.route-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-} */
 .route-leave-active {
   animation: leavePageAnimation 1s ease-in-out;
 }
-/* .route-leave-to {
-  opacity: 0;
-  transform: translateY(-100px);
-} */
-
 @keyframes enterPageAnimation {
   0% {
     transform: scale(0.9) translateX(100%);

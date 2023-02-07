@@ -6,7 +6,7 @@
             <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
         </h1>
         <p>I'm a frontend developer with 1 year experience, I work with Vuejs framework and i have many projects with it.</p>
-        <base-button>Contact</base-button>
+        <base-button><router-link to="/contact">Contact</router-link></base-button>
         <ul class="social-icons">
             <social-icons 
                 v-for="socialIcon in socialIcons"
@@ -29,7 +29,7 @@ export default {
         return {
             typeValue: '',
             typeStatus: null,
-            typingArray: ['Omar Shahwan.', 'Frontend Developer.'],
+            typingArray: ['Omar Shahwan.', 'a Frontend Developer.'],
             arrayIndex: 0,
             typingSpeed: 200,
             charIndex: 0,
@@ -57,7 +57,9 @@ export default {
                         this.arrayIndex = 0;
                     }
                     if (this.typingCounter < 3) {
-                        this.eraseText();
+                        setTimeout(() => {
+                            this.eraseText();
+                        }, 1000)
                     }
                 }
             }, this.typingSpeed)
@@ -73,7 +75,7 @@ export default {
                     this.charIndex = 0;
                     this.typeText();
                 }
-            }, this.typingSpeed) 
+            }, this.typingSpeed / 1.5) 
         }
     },
     mounted(){
@@ -87,7 +89,6 @@ export default {
     flex-basis: 50%;
     position: relative;
 }
-
 .text::before {
     content: '';
     position: absolute;
@@ -121,9 +122,8 @@ span {
     color: var(--primary-alt);
 }
 h1 {
-    font-size: 38px;
-    color: var(--dark-alt);
-    margin: 0.5rem 0;
+    font-size: 46px;
+    color: var(--light);
 }
 @media(max-width: 767px) {
     h1 {
@@ -132,18 +132,21 @@ h1 {
 }
 span.cursor  {
     display: inline-block;
-    margin-left: 3px;
-    width: 4px;
-    background-color: var(--dark);
-    animation: cursorBink 1s infinite
+    margin-left: 5px;
+    width: 3px;
+    background-color: var(--light);
+    animation: cursorBink 1s infinite;
 }
 span.cursor.typing {
     animation: none;
 }
 p {
-    color: #777;
+    color: var(--p-color);
     line-height: 1.7;
-    margin-bottom: 0.5rem;
+    margin: 20px 0;
+}
+a {
+    color: var(--light);
 }
 ul {
     list-style: none;
@@ -151,16 +154,14 @@ ul {
     gap: 20px;
     margin-top: 20px;
 }
-
 @media(max-width: 767px) {
     ul {
         justify-content: center;
     }
 }
-
 @keyframes cursorBink {
     49% {
-        background-color: var(--dark);
+        background-color: var(--light);
     }
     50% {
         background-color: transparent;

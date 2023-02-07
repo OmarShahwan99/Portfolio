@@ -50,7 +50,7 @@ export default {
 .active,
 .button:hover {
     color: var(--primary);
-    background-color: var(--dark-alt);
+    background-color: var(--gray);
 }
 .icon {
     font-size: 2rem;

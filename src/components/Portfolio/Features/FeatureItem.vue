@@ -15,8 +15,7 @@ export default {
 
 <style scoped>
 .feature-item {
-    background-color: #fff;
-    box-shadow: 1px 3px 8px #ccc;
+    background-color: var(--light);
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -30,7 +29,7 @@ export default {
     transform: scale(1.05);
 }
 .icon {
-    font-size: 24px;
+    font-size: 28px;
     color: var(--primary-alt);
 }
 h4 {

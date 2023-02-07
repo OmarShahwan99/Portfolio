@@ -43,7 +43,7 @@ export default {
 }
 .title {
     display: block;
-    color: var(--dark);
+    color: var(--light);
     font-weight: 500;
     margin-bottom: 3px;
 }
@@ -69,5 +69,6 @@ export default {
     top: 2px;
     font-size: 14px;
     font-weight: 600;
+    color: var(--light);
 }
 </style>

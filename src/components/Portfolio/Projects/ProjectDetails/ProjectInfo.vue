@@ -48,5 +48,6 @@ li span {
     color: var(--dark);
     background-color: var(--primary-alt);
     padding: 5px 15px;
+    font-size: 12px;
 }
 </style>
