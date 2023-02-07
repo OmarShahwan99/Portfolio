@@ -74,7 +74,10 @@ export default {
 body {
   font-family: 'Open Sans', sans-serif;
   background-image: var(--background);
+}
+.app {
   overflow: hidden;
+  position: relative;
 }
 .container {
     padding-left: 15px;

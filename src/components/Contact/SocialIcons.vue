@@ -1,6 +1,6 @@
 <template>
     <li>
-        <a :href="`https://${link}`">
+        <a target="_blank" :href="`https://${link}`">
             <font-awesome-icon :icon="['fab', icon]" class="icon"/>
             <font-awesome-icon :icon="['fab', icon]" class="hovered-icon"/>
         </a>

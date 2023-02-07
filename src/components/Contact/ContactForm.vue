@@ -1,5 +1,5 @@
 <template>
-    <teleport to="body">
+    <teleport to=".app">
         <transition name="alert">
             <div @click="fieldIsEmpty = false" v-if="fieldIsEmpty" class="alert">There are empty fields!</div>
         </transition>
@@ -31,20 +31,9 @@ export default {
     data() {
         return {
             fieldIsEmpty: false,
-            validation: false,
         }
     },
     methods: {
-        validateData() {
-            if (
-                this.$refs.enteredName.value.trim() === ''
-                || this.$refs.enteredEmail.value.trim() === ''
-                || this.$refs.enteredPhone.value.trim() === ''
-                || this.$refs.enteredMsg.value.trim() === ''
-                ) {
-                    this.validation = true;
-            }
-        },
         submitData() {
             if (
                 this.$refs.enteredName.value.trim() === ''

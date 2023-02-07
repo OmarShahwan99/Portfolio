@@ -1,7 +1,7 @@
 <template>
     <h1>{{ projectInfo.title }}</h1>
-    <span>Project URL: <a :href="projectInfo.projectLink">{{ projectInfo.projectLink }}</a></span>
-    <span>Github URL: <a :href="projectInfo.githubLink">{{ projectInfo.githubLink }}</a></span>
+    <span>Project URL: <a target="_blank" :href="projectInfo.projectLink">{{ projectInfo.projectLink }}</a></span>
+    <span>Github URL: <a target="_blank" :href="projectInfo.githubLink">{{ projectInfo.githubLink }}</a></span>
     <ul>
         <h4>Tools: </h4> 
         <li v-for="tool in projectInfo.tools" :key="tool">

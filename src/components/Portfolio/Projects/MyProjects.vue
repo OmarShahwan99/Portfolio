@@ -49,20 +49,20 @@ export default {
         {
           imgs: ['project-01.png','project-11.png', 'project-21.png', 'project-31.png'], 
           title: 'Elzero Template', 
-          projectLink: "Elzero.com", githubLink: 'github.com', 
-          tools: ['HTML5', 'CSS3', 'Vuejs'] 
+          projectLink: "https://omarshahwan99.github.io/Elzero/", githubLink: 'https://github.com/OmarShahwan99/Elzero', 
+          tools: ['HTML5', 'CSS3', 'JS'] 
         },
         { 
           imgs: ['project-02.png','project-12.png', 'project-22.png', 'project-32.png'], 
           title: 'Shop Template', 
-          projectLink: "Shop.com", githubLink: 'github.com', 
-          tools: ['HTML5', 'CSS3', 'Vuejs'] 
+          projectLink: "https://omarshahwan99.github.io/Template-Shop/", githubLink: 'https://github.com/OmarShahwan99/Template-Shop', 
+          tools: ['HTML5', 'CSS3', 'JS'] 
         },
         { 
           imgs: ['project-03.png','project-13.png', 'project-23.png', 'project-33.png'], 
-          title: 'Burger Builder', 
-          projectLink: "Burger.com", githubLink: 'github.com', 
-          tools: ['HTML5', 'CSS3', 'React'] 
+          title: 'Smak Template', 
+          projectLink: "https://omarshahwan99.github.io/Smak/", githubLink: 'https://github.com/OmarShahwan99/Smak', 
+          tools: ['HTML5', 'CSS3'] 
         },
       ],
       projectIsViewed: false,

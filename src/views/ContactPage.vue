@@ -30,7 +30,7 @@ export default {
                 { icon: 'fa-facebook-f', link: 'www.facebook.com/Omar.Shahwan.X'},
                 { icon: 'fa-github', link: 'github.com/OmarShahwan99?tab=repositories' },
                 { icon: 'fa-telegram', link: 't.me/OmarShahwan' },
-                { icon: 'fa-linkedin-in', link: '' }
+                { icon: 'fa-linkedin-in', link: 'https://www.linkedin.com/in/omar-shahwan-4b615624a/' }
             ],
         }
     }

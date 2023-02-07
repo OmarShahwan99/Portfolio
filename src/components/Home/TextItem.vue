@@ -38,7 +38,7 @@ export default {
                 { icon: 'fa-facebook-f', link: 'www.facebook.com/Omar.Shahwan.X'},
                 { icon: 'fa-github', link: 'github.com/OmarShahwan99?tab=repositories' },
                 { icon: 'fa-telegram', link: 't.me/OmarShahwan' },
-                { icon: 'fa-linkedin-in', link: '' }
+                { icon: 'fa-linkedin-in', link: 'https://www.linkedin.com/in/omar-shahwan-4b615624a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BLk7RH6KuQqmnn2NP21nTEg%3D%3D' }
             ],
         }
     },
