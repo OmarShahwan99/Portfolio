@@ -4,33 +4,47 @@
             <div @click="fieldIsEmpty = false" v-if="fieldIsEmpty" class="alert">There are empty fields!</div>
         </transition>
     </teleport>
-    <form @submit.prevent="submitData">
+    <form ref="formData" @submit.prevent="submitData">
         <h1>Get In Toch</h1>
         <div>
             <label for="name">Name</label>
-            <input ref="enteredName" type="text" name="name" />
+            <input ref="enteredName" type="text" name="from_name" />
         </div>
         <div>
             <label for="email">Email</label>
-            <input ref="enteredEmail" type="email" name="email" />
+            <input ref="enteredEmail" type="email" name="email_id" />
         </div>
         <div>
             <label for="phone">Phone</label>
-            <input ref="enteredPhone" type="text" name="phone" />
+            <input ref="enteredPhone" type="tel" name="phone_id" />
         </div>
         <div>
             <label for="name">Message</label>
             <textarea ref="enteredMsg" name="message"></textarea>
         </div>
         <base-button>SEND</base-button>
+        <base-modal @close="closeModal" :open="modalIsOpen">
+            <div class="modal-content">
+                <div class="lds-ring" v-if="loading"><div></div><div></div><div></div><div></div></div>
+                <font-awesome-icon class="icon" v-if="!loading" icon="fa-solid fa-circle-check" />
+                <div v-if="!loading">
+                    <p>Thank you!, Your message has been sent, I'll call you back soon</p>
+                    <button class="ok" @click="closeModal">OK!</button>
+                </div>
+            </div>
+        </base-modal>
     </form>
 </template>
 
 <script>
+import emailjs from '@emailjs/browser';
+
 export default {
     data() {
         return {
             fieldIsEmpty: false,
+            loading: false,
+            modalIsOpen: false
         }
     },
     methods: {
@@ -43,17 +57,24 @@ export default {
                 ) {
                     this.fieldIsEmpty = true;
                 }else {
-                    fetch('https://formsubmit.co/el/segawo', {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            name: this.$refs.enteredName,
-                            email: this.$refs.enteredEmail,
-                            phone: this.$refs.enteredPhone,
-                            msg: this.$refs.enteredMsg
-                        }),
-                    })
+                    this.modalIsOpen = true;
+                    this.loading = true;
+                    emailjs.sendForm('service_ly2x6la', 'template_w5ta5p8', this.$refs.formData, 'aUNviJt-roh6hc4Kl')
+                            .then(res => {
+                                this.loading = false;
+                                console.log('SUCCESS!',res);
+                            }), (error) => {
+                                console.log('FAILED',error);
+                            }
                 }
-        }    
+                this.$refs.enteredName.value = '';
+                this.$refs.enteredEmail.value = '';
+                this.$refs.enteredPhone.value = '';
+                this.$refs.enteredMsg.value = '';
+        },
+        closeModal() {
+            this.modalIsOpen = false
+        }
     }
 }
 </script>
@@ -129,9 +150,67 @@ label {
     font-weight: 600;
 }
 textarea {
-    height: 140px;
+    height: 120px;
 }
 button {
     width: fit-content;
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.icon {
+    font-size: 72px;
+    color: var(--primary-alt);
+}
+.modal-content p {
+    color: var(--light);
+    margin: 20px 0;
+}
+.ok {
+    text-align: center;
+    color: var(--dark);
+    background-color: var(--primary-alt);
+    font-weight: 600;
+    padding: 8px 20px;
+}
+.lds-ring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--primary-alt);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--primary-alt) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 </style>

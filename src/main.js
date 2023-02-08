@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import BaseButton from './UI/BaseButton.vue';
 import BaseTitle from './UI/BaseTitle.vue';
+import BaseModal from './UI/BaseModal.vue';
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -36,7 +37,7 @@ library.add(
     faJs,
     faVuejs,
     faReact,
-    faBootstrap
+    faBootstrap,
 );
 const app = createApp(App)
 
@@ -44,6 +45,7 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.component('base-button', BaseButton);
 app.component('base-title', BaseTitle);
+app.component('base-modal', BaseModal)
 
 app.use(router);
 

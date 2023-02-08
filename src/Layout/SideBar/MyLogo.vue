@@ -1,7 +1,7 @@
 <template>
     <div class="logo">
         <h1>&lt;<transition name="name">
-            <span v-if="isOpen" :class="isOpen ? 'open' : ''">Omar</span>
+            <span v-if="isOpen" :class="isOpen ? 'open' : ''">OMAR</span>
         </transition>/&gt;</h1>
     </div>
 </template>

@@ -23,8 +23,10 @@ export default {
 </script>
 
 <style scoped>
-.about-me {
-    flex-basis: 50%;
+@media (min-width: 991px) {
+    .about-me {
+        flex-basis: 50%;
+    }
 }
 @media(max-width: 991px) {
     .about-me {

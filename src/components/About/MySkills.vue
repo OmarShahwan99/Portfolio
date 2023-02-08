@@ -31,8 +31,12 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 991px) {
+    .skills {
+        flex-basis: 50%;
+    }
+}
 .skills {
-    flex-basis: 50%;
     padding: 20px;
 }
 h1 {

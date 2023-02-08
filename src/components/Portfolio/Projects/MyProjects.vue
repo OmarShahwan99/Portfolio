@@ -11,7 +11,7 @@
     >
     </project-card>
   </div>
-  <project-modal @close="closeModal" :open="projectIsViewed">
+  <base-modal @close="closeModal" :open="projectIsViewed">
     <div class="project-modal">
       <div class="image-slider">
         <image-slider
@@ -26,19 +26,17 @@
         <project-info :projectInfo="projectInfo"></project-info>
       </div>
     </div>
-  </project-modal>
+  </base-modal>
 </template>
 <script>
 
 
-import ProjectModal from '../ProjectModal.vue';
 import ProjectInfo from './ProjectDetails/ProjectInfo.vue';
 import ImageSlider from './ProjectDetails/ImageSlider.vue';
 import ProjectCard from './ProjectCard.vue';
 
 export default {
   components: {
-    ProjectModal,
     ProjectInfo,
     ImageSlider,
     ProjectCard,
@@ -49,19 +47,19 @@ export default {
         {
           imgs: ['project-01.png','project-11.png', 'project-21.png', 'project-31.png'], 
           title: 'Elzero Template', 
-          projectLink: "https://omarshahwan99.github.io/Elzero/", githubLink: 'https://github.com/OmarShahwan99/Elzero', 
+          projectLink: "http://bit.ly/3x32Qud", githubLink: 'http://bit.ly/3lmBxII', 
           tools: ['HTML5', 'CSS3', 'JS'] 
         },
         { 
           imgs: ['project-02.png','project-12.png', 'project-22.png', 'project-32.png'], 
           title: 'Shop Template', 
-          projectLink: "https://omarshahwan99.github.io/Template-Shop/", githubLink: 'https://github.com/OmarShahwan99/Template-Shop', 
+          projectLink: "http://bit.ly/3Yvu2xT", githubLink: 'http://bit.ly/3RHFMue', 
           tools: ['HTML5', 'CSS3', 'JS'] 
         },
         { 
           imgs: ['project-03.png','project-13.png', 'project-23.png', 'project-33.png'], 
           title: 'Smak Template', 
-          projectLink: "https://omarshahwan99.github.io/Smak/", githubLink: 'https://github.com/OmarShahwan99/Smak', 
+          projectLink: "http://bit.ly/3HJcxTh", githubLink: 'http://bit.ly/3RGzLOH', 
           tools: ['HTML5', 'CSS3'] 
         },
       ],
@@ -107,9 +105,10 @@ h1 {
 }
 
 .image-slider {
-  width: 400px;
+  width: 480px;
   overflow: hidden;
 }
+
 @media (max-width: 767px) {
   .image-slider {
     display: none;

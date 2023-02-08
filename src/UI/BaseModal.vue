@@ -30,19 +30,13 @@ export default {
 .modal {
     background-color: var(--dark-alt);
     width: fit-content;
-    border-radius: 12px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
-    padding: 30px;
+    padding: 20px;
     z-index: 1000;
 }
-/* @media (max-width: 767px) {
-    .modal {
-        width: 60%;
-    }
-} */
 .modal span {
     position: absolute;
     top: 10px;

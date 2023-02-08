@@ -27,7 +27,7 @@ span {
     font-size: 18px;
 }
 a {
-    margin-left: 6px;
+    display: block;
     color: var(--primary-alt);
     font-weight: bold;
 }

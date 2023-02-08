@@ -1,22 +1,17 @@
 <template>
     <div class="portfolio">
         <div class="container">
-            <!-- <div class="features">
-                <features-boxes></features-boxes>
-            </div> -->
-            <projects-slider></projects-slider>
+            <my-projects></my-projects>
         </div>
     </div>
 </template>
 
 <script>
-import ProjectsSlider from '../components/Portfolio/Projects/MyProjects.vue';
-// import FeaturesBoxes from '../components/Portfolio/Features/FeaturesBoxes.vue';
+import MyProjects from '../components/Portfolio/Projects/MyProjects.vue';
 
 export default {
     components: {
-        ProjectsSlider,
-        // FeaturesBoxes,
+        MyProjects,
     }
 }
 </script>
