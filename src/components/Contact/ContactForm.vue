@@ -26,9 +26,14 @@
         <base-modal @close="closeModal" :open="modalIsOpen">
             <div class="modal-content">
                 <div class="lds-ring" v-if="loading"><div></div><div></div><div></div><div></div></div>
-                <font-awesome-icon class="icon" v-if="!loading" icon="fa-solid fa-circle-check" />
-                <div v-if="!loading">
+                <div v-if="!error && !loading">
+                    <font-awesome-icon class="icon" icon="fa-solid fa-circle-check" />
                     <p>Thank you!, Your message has been sent, I'll call you back soon</p>
+                    <button class="ok" @click="closeModal">OK!</button>
+                </div>
+                <div v-else-if="error && !loading">
+                    <font-awesome-icon class="icon" icon="fa-solid fa-circle-xmark" />
+                    <p>Something went wrong!, please try again.</p>
                     <button class="ok" @click="closeModal">OK!</button>
                 </div>
             </div>
@@ -44,7 +49,8 @@ export default {
         return {
             fieldIsEmpty: false,
             loading: false,
-            modalIsOpen: false
+            modalIsOpen: false,
+            error: false
         }
     },
     methods: {
@@ -60,17 +66,19 @@ export default {
                     this.modalIsOpen = true;
                     this.loading = true;
                     emailjs.sendForm('service_ly2x6la', 'template_w5ta5p8', this.$refs.formData, 'aUNviJt-roh6hc4Kl')
-                            .then(res => {
+                            .then(() => {
                                 this.loading = false;
-                                console.log('SUCCESS!',res);
-                            }), (error) => {
+                            }).catch(error => {
+                                this.loading = false;
+                                this.error = true
                                 console.log('FAILED',error);
-                            }
+                            })
+                    this.$refs.enteredName.value = '';
+                    this.$refs.enteredEmail.value = '';
+                    this.$refs.enteredPhone.value = '';
+                    this.$refs.enteredMsg.value = '';
+                    this.fieldIsEmpty = false;
                 }
-                this.$refs.enteredName.value = '';
-                this.$refs.enteredEmail.value = '';
-                this.$refs.enteredPhone.value = '';
-                this.$refs.enteredMsg.value = '';
         },
         closeModal() {
             this.modalIsOpen = false

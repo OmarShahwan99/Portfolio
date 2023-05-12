@@ -5,7 +5,7 @@
             <span class="typed-text">{{ typeValue }}</span>
             <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
         </h1>
-        <p>I'm a frontend developer with 1 year experience, I work with Vuejs framework and i have many projects with it.</p>
+        <p>I'm a frontend developer with 1 year experience, I build beautiful UIs with focus.</p>
         <base-button><router-link to="/contact">Contact</router-link></base-button>
         <ul class="social-icons">
             <social-icons 

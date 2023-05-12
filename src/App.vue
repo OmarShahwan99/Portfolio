@@ -1,7 +1,5 @@
 <template>
   <div class="app">
-    <!-- <SideBar :sidebarIsOpen="sidebarIsOpen"/>
-    <MobileNavigations /> -->
     <component :is="activeComponent"></component>
     <main>
       <router-view v-slot="slotProps">
@@ -16,7 +14,6 @@
 <script>
 import SideBar from './Layout/SideBar/SideBar.vue';
 import MobileNavigations from './Layout/MobileNavigations/MobileNavigations.vue'
-
 export default {
   components: {
     SideBar,
@@ -30,39 +27,46 @@ export default {
                 { link: '/portfolio', icon: 'fa-briefcase', title: 'Portfolio' },
                 { link: '/contact', icon: 'fa-envelope', title: 'Contact' },
             ],
-            activeComponent: 'side-bar'
+            activeComponent: 'side-bar',
         }
     },
     mounted() {
-      this.getWindowWidth()
+      this.getWindowWidth();
       window.addEventListener('resize', this.getWindowWidth);
     },
+    watch: {
+      mode(newMode) {
+        localStorage.mode = newMode;
+      },
+    },
     methods: {
-        getWindowWidth() {
-          if (window.innerWidth <= 768 ) {
-            this.activeComponent = 'mobile-navigations'
-          }else {
-            this.activeComponent = 'side-bar'
-          }
+      getWindowWidth() {
+        if (window.innerWidth <= 768 ) {
+          this.activeComponent = 'mobile-navigations'
+        }else {
+          this.activeComponent = 'side-bar'
         }
+      },
     },
     provide() {
-        return {
-            items: this.sidebarItems,
-        }
+      return {
+        items: this.sidebarItems,
+      }
     }
 }
 </script>
 
 <style>
 :root {
-  --background: linear-gradient(to right, #1e293b, #334155, #2c5364);
+  --background: linear-gradient(to right, var(--dark), var(--dark-alt), var(--lighting-dark));
   --primary: #4ade80;
   --primary-alt: #22c55e;
   --gray: #64748b;
   --dark: #1e293b;
   --dark-alt: #334155;
+  --lighting-dark: #2c5364;
   --light: #f1f5f9;
+  --light-alt: #d7e4f1;
   --p-color: #a5a7a8;
   --sidebar-width: 300px;
 }

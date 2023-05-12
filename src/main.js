@@ -12,7 +12,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faEye, faLaptopCode, faCode, faCheckCircle, faCircleExclamation, faHouse, faAddressCard, faBriefcase, faEnvelope, faCircleInfo, faGear  } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faLaptopCode, faCode, faCheckCircle, faCircleExclamation, faHouse, faAddressCard, faBriefcase, faEnvelope, faCircleInfo, faGear, faCircleXmark  } from '@fortawesome/free-solid-svg-icons'
 import { faBootstrap, faCss3, faFacebookF, faGithub, faHtml5, faJs, faLinkedinIn, faReact, faTelegram, faVuejs } from '@fortawesome/free-brands-svg-icons';
 
 /* add icons to the library */
@@ -38,6 +38,7 @@ library.add(
     faVuejs,
     faReact,
     faBootstrap,
+    faCircleXmark
 );
 const app = createApp(App)
 
