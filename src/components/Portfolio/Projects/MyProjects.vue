@@ -45,6 +45,18 @@ export default {
     return {
       projects: [
         {
+          imgs: ['food-meals.png', 'project-41.png', 'project-42.png', 'project-43.png'],
+          title: 'Food Meals',
+          projectLink: '', githubLink: 'https://bit.ly/42LmjxP',
+          tools: ['HTML5', 'CSS3', 'React', 'Context Api', 'Firebase' ],
+        },
+        {
+          imgs: ['HakeemQ.png', 'project-51.png', 'project-52.png', 'project-53.png'],
+          title: 'HakeemQ',
+          projectLink: '', githubLink: '',
+          tools: ['HTML5', 'CSS3', 'React', 'Context Api', 'axios', 'Authentication', 'Authorization', 'Doctor dashboard'],
+        },
+        {
           imgs: ['project-01.png','project-11.png', 'project-21.png', 'project-31.png'], 
           title: 'Elzero Template', 
           projectLink: "http://bit.ly/3x32Qud", githubLink: 'http://bit.ly/3lmBxII', 

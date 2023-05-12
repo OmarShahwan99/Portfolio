@@ -1,6 +1,6 @@
 <template>
     <h1>{{ projectInfo.title }}</h1>
-    <span>Project URL: <a target="_blank" :href="projectInfo.projectLink">{{ projectInfo.projectLink }}</a></span>
+    <span>Live Demo: <a target="_blank" :href="projectInfo.projectLink">{{ projectInfo.projectLink }}</a></span>
     <span>Github URL: <a target="_blank" :href="projectInfo.githubLink">{{ projectInfo.githubLink }}</a></span>
     <ul>
         <h4>Tools: </h4> 
@@ -39,6 +39,9 @@ h4 {
     margin-bottom: 10px;
     color: var(--light);
     font-size: 18px;
+}
+ul {
+    max-width: 400px;
 }
 li {
     display: inline-block;

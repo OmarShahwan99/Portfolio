@@ -21,8 +21,10 @@ export default {
                     { lang: 'CSS', precent: 80 },
                     { lang: 'JavaScript', precent: 75 },
                     { lang: 'tailwindcss', precent: 85 },
-                    { lang: 'Vujs', precent: 80 },
-                    { lang: 'React', precent: 50 }
+                    { lang: 'Bootstrap', precent: 85 },
+                    { lang: 'React', precent: 80 },
+                    { lang: 'Vujs', precent: 70 },
+                    { lang: 'APIs', precent: 75 }
                 ],
             
         }

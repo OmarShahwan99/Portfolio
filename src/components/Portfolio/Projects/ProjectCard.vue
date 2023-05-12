@@ -1,16 +1,5 @@
 <template>
     <div class="card">
-        <!-- <div class="image-content">
-            <img :src="require(`../../../assets/${imgs[0]}`)"/>
-        </div>
-        <div class="card-content">
-            <h4 class="title">{{ title }}</h4>
-            <ul class="tools">
-                <span>Tools:</span>
-                <li v-for="tool in tools" :key="tool">{{ tool }}</li>
-            </ul>
-            <button @click="$emit('view-project', index)">View More</button>
-        </div> -->
         <div class="image-content">
             <img :src="require(`../../../assets/${imgs[0]}`)"/>
             <div class="buttons">
@@ -38,7 +27,6 @@ export default {
     width: 100%;
     height: 100%;
     border: 15px solid var(--primary-alt);
-    object-fit: cover;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
@@ -48,6 +36,7 @@ export default {
     height: 100%;
     border-radius: 8px;
     transition: .3s;
+    object-fit: cover;
 }
 .image-content::before {
     content: '';
@@ -65,8 +54,6 @@ export default {
 .image-content:hover::before {
     opacity: 1;
 }
-.card:hover .image-content img {
-}
 .buttons {
     position: absolute;
     bottom: -100px;
@@ -78,32 +65,7 @@ export default {
 .image-content:hover .buttons {
     bottom: 5px;
 }
-/* .card-content {
-    padding: 10px 30px;
-}
-.title {
-    font-size: 24px;
-    color: var(--dark-alt);
-}
-.tools {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
-    align-items: center;
-}
-.tools span {
-    color: var(--dark);
-    font-size: 14px;
-    font-weight: 600;
-}
-.tools li {
-    background-color: var(--dark-alt);
-    color: var(--light);
-    padding: 2px 14px;
-    border-radius: 25px;
-} */
+
 button {
     color: var(--dark-alt);
     padding: 10px 18px;
