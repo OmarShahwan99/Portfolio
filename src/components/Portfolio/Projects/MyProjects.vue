@@ -2,7 +2,8 @@
   <div class="prjects">
     <h1>My Portfolio</h1>
     <project-card
-      v-for="(project, index) in projects" :key="project.title"
+      v-for="(project, index) in projects"
+      :key="project.title"
       @view-project="viewProject"
       :index="index"
       :title="project.title"
@@ -29,11 +30,9 @@
   </base-modal>
 </template>
 <script>
-
-
-import ProjectInfo from './ProjectDetails/ProjectInfo.vue';
-import ImageSlider from './ProjectDetails/ImageSlider.vue';
-import ProjectCard from './ProjectCard.vue';
+import ProjectInfo from "./ProjectDetails/ProjectInfo.vue";
+import ImageSlider from "./ProjectDetails/ImageSlider.vue";
+import ProjectCard from "./ProjectCard.vue";
 
 export default {
   components: {
@@ -45,34 +44,75 @@ export default {
     return {
       projects: [
         {
-          imgs: ['food-meals.png', 'project-41.png', 'project-42.png', 'project-43.png'],
-          title: 'Food Meals',
-          projectLink: '', githubLink: 'https://bit.ly/42LmjxP',
-          tools: ['HTML5', 'CSS3', 'React', 'Context Api', 'Firebase' ],
+          imgs: ["elite01.png", "elite02.png", "elite03.png", "elite04.png"],
+          title: "E-lite Shoppy",
+          projectLink: "https://bit.ly/3NchCaA",
+          githubLink: "https://bit.ly/3CaW1cv",
+          tools: [
+            "React",
+            "Tailwindcss",
+            "Redux Toolkit",
+            "Redux Thunk",
+            "Cloud Firestore",
+            "fakestore api",
+          ],
         },
         {
-          imgs: ['HakeemQ.png', 'project-51.png', 'project-52.png', 'project-53.png'],
-          title: 'HakeemQ',
-          projectLink: '', githubLink: '',
-          tools: ['HTML5', 'CSS3', 'React', 'Context Api', 'axios', 'Authentication', 'Authorization', 'Doctor dashboard'],
+          imgs: [
+            "food-meals.png",
+            "project-41.png",
+            "project-42.png",
+            "project-43.png",
+          ],
+          title: "Food Meals",
+          projectLink: "https://bit.ly/43Dke74",
+          githubLink: "https://bit.ly/42LmjxP",
+          tools: ["HTML5", "CSS3", "React", "Context Api", "Firebase"],
         },
         {
-          imgs: ['project-01.png','project-11.png', 'project-21.png', 'project-31.png'], 
-          title: 'Elzero Template', 
-          projectLink: "http://bit.ly/3x32Qud", githubLink: 'http://bit.ly/3lmBxII', 
-          tools: ['HTML5', 'CSS3', 'JS'] 
+          imgs: [
+            "HakeemQ.png",
+            "project-51.png",
+            "project-52.png",
+            "project-53.png",
+          ],
+          title: "HakeemQ",
+          projectLink: "",
+          githubLink: "",
+          tools: [
+            "HTML5",
+            "CSS3",
+            "React",
+            "Context Api",
+            "axios",
+            "Authentication",
+            "Authorization",
+            "Doctor dashboard",
+          ],
         },
-        { 
-          imgs: ['project-02.png','project-12.png', 'project-22.png', 'project-32.png'], 
-          title: 'Shop Template', 
-          projectLink: "http://bit.ly/3Yvu2xT", githubLink: 'http://bit.ly/3RHFMue', 
-          tools: ['HTML5', 'CSS3', 'JS'] 
+        {
+          imgs: [
+            "project-02.png",
+            "project-12.png",
+            "project-22.png",
+            "project-32.png",
+          ],
+          title: "Shop Template",
+          projectLink: "http://bit.ly/3Yvu2xT",
+          githubLink: "http://bit.ly/3RHFMue",
+          tools: ["HTML5", "CSS3", "JS"],
         },
-        { 
-          imgs: ['project-03.png','project-13.png', 'project-23.png', 'project-33.png'], 
-          title: 'Smak Template', 
-          projectLink: "http://bit.ly/3HJcxTh", githubLink: 'http://bit.ly/3RGzLOH', 
-          tools: ['HTML5', 'CSS3'] 
+        {
+          imgs: [
+            "project-03.png",
+            "project-13.png",
+            "project-23.png",
+            "project-33.png",
+          ],
+          title: "Smak Template",
+          projectLink: "http://bit.ly/3HJcxTh",
+          githubLink: "http://bit.ly/3RGzLOH",
+          tools: ["HTML5", "CSS3"],
         },
       ],
       projectIsViewed: false,
@@ -85,8 +125,8 @@ export default {
       this.projectImgs = this.projects[index].imgs;
       this.projectIsViewed = true;
       this.projectInfo = {
-        ...this.projects[index]
-      }
+        ...this.projects[index],
+      };
       console.log(this.showedCmp);
     },
     closeModal() {
